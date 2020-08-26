@@ -1,0 +1,9 @@
+/*!
+ * styleit
+ * StyleIt.js is a text editor API 
+ * 
+ * @version v1.0.0
+ * @author Adi L, jonathan C
+ * @homepage 
+ * @repository git+https://github.com/style-it/StyleIt-dev.git
+ */
