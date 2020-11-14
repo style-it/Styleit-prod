@@ -1,4 +1,4 @@
-Home page: https://styleitapi.netlify.app/ (under construction)
+Home page: https://style-it.github.io/home
 # TextEditor-API concepts (Beta)
 
 StyleIt.js is a simple text editor API built for Developers. <br/>
