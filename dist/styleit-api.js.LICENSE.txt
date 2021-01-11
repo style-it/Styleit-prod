@@ -2,7 +2,7 @@
  * styleit-api
  * StyleIt is a simple text editor API built for Developers. 
  * 
- * @version v1.0.17
+ * @version v1.0.18
  * @author Adi L, Jonathan C
  * @homepage 
  * @repository git+https://github.com/style-it/StyleIt-prod.git
