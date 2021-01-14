@@ -32,20 +32,25 @@
 
     </div>
     <div contenteditable="true" id="editor" spellcheck="false">
-  <p>
-    StyleIt.js is a simple text editor API built for Developers. 
-  </p>
-
-  </div>
-  <style>
-    .test {
-      letter-spacing: 0.2em;
-      -webkit-text-fill-color: transparent;
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: #b50064;
-      text-shadow: 3px 2px 20px #0a0a0a, 1px 3px 6px #ff0c0c;
-    }
-  </style>
+      <h1>
+        Heading 1
+      </h1>
+      <p>
+        StyleIt.js is a simple text editor API built for Developers.
+      </p>
+      <div>
+        text in div
+      </div>
+    </div>
+    <style>
+      .test {
+        letter-spacing: 0.2em;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #b50064;
+        text-shadow: 3px 2px 20px #0a0a0a, 1px 3px 6px #ff0c0c;
+      }
+    </style>
   </div>
   <script>
     (function () {
@@ -56,6 +61,16 @@
           document.body.appendChild(root);
           //================================================================
           const config = {
+            stylesToPaste: {
+              "textDecoration": true,
+              "fontSize": true,
+              "fontStyle": true,
+              "color": true,
+              "backgroundColor": true,
+              "fontWeight": true,
+              "textShadow": true,
+              "fontFamily": true
+            },
             onKeyPress: [
               [66, () => styleIt.execCmd("font-weight", "bold", styleIt.MODES.Toggle, {
                 unWrap: ["b"]
@@ -80,19 +95,19 @@
             }
           }
           const styleIt = new styleit('editor', config);
-         styleIt.on("inspect",(collectedStyled)=>{
-          console.log(collectedStyled);
-         });
-         styleIt.on("paste",(html)=>{
-          console.log("paste",html);
-         });
-         styleIt.on("inspectLink",(link)=>{
-          console.log("inspectLink",link);
-         });
+          styleIt.on("inspect", (collectedStyled) => {
+            console.log(collectedStyled);
+          });
+          styleIt.on("paste", (html) => {
+            console.log("paste", html);
+          });
+          styleIt.on("inspectLink", (link) => {
+            console.log("inspectLink", link);
+          });
           //================================================================
           const btns = [{
             text: "toggle class",
-            onclick: () => styleIt.ToggleClass("test")
+            onclick: () => styleIt.toggleClass("test")
           },
           {
             text: "B:Block",
@@ -110,9 +125,7 @@
 
           {
             text: "U",
-            onclick: () => styleIt.execCmd("text-decoration", "underline", styleIt.MODES.Toggle, {
-              selection: true
-            })
+            onclick: () => styleIt.execCmd("text-decoration", "underline", styleIt.MODES.Toggle)
           },
           {
             text: "50px",
@@ -173,31 +186,31 @@
           });
           const https = root.addElement("button");
           https.innerHTML = "https://helloworld.com"
-          https.onclick = () =>{
+          https.onclick = () => {
             styleIt.link({
-              href:"https://helloworld.com",
-              target:"_parent"
+              href: "https://helloworld.com",
+              target: "_parent"
             })
           }
           const mailto = root.addElement("button");
           mailto.innerHTML = "mailto:adilev3344@gmail.com"
-          mailto.onclick = () =>{
+          mailto.onclick = () => {
             styleIt.link({
-              href:"adilev3344@gmail.com",
-              protocol:"mailto:"
+              href: "adilev3344@gmail.com",
+              protocol: "mailto:"
             })
           }
           const tel = root.addElement("button");
           tel.innerHTML = "tel:0505891010"
-          tel.onclick = () =>{
+          tel.onclick = () => {
             styleIt.link({
-              href:"0505891010",
-              protocol:"tel"
+              href: "0505891010",
+              protocol: "tel"
             })
           }
           const unLinker = root.addElement("button");
           unLinker.innerHTML = "unLink"
-          unLinker.onclick = () =>{
+          unLinker.onclick = () => {
             styleIt.unLink();
           }
           const slider = root.addElement('input');
