@@ -177,6 +177,10 @@ tr:nth-child(even) {
             onclick: () => styleIt.toggleClass("test")
           },
           {
+            text: "underline as tag",
+            onclick: () => styleIt.wrapWithTag("strong")
+          },
+          {
             text: "B:Block",
             onclick: () => styleIt.execCmd("font-weight", "bold", styleIt.MODES.Toggle, {
               target: "block",
@@ -320,7 +324,7 @@ tr:nth-child(even) {
           const destroy = root.addElement('button');
           destroy.innerHTML = "Destroy";
           destroy.onclick = () => {
-            styleIt.Destroy();
+            styleIt.destroy();
           }
         });
       }
